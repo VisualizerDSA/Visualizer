@@ -56,13 +56,13 @@ function bubSort(arr){
   }
 }
 
-function createrect(a,p,r,g,b){
+function createrect(arr,pos,r,g,b){
   fill(r,g,b);
-  rect(p,350,50,50);
+  rect(pos,350,50,50);
   textSize(26);
   textAlign(CENTER);
   fill('white')
-  text(a, p+25, 385);
+  text(arr, pos+25, 385);
 }
 
 function createTriangle(x){
@@ -72,10 +72,9 @@ function createTriangle(x){
 
 function draw() {
   background(000);
-  for(let o=0;o<arr.length;o++){
-    createrect(arr[o],initialBoxPos, 255,0,0);
-    initialBoxPos+=50;
-    
+  for(let v=0;v<arr.length;v++){
+    createrect(arr[v],initialBoxPos, 255,0,0);
+    initialBoxPos+=50; 
   }
   initialBoxPos = 200;
   bubSort(arr);
