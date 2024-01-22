@@ -2,7 +2,7 @@
 let x;
 let c=1;
 let cursorSpeed = 2;
-let initialBoxPos = 200;
+let initialBoxPos = 225;
 let stopLimit = 5;
 
 let arr = [9,8,5,4,3,2,1]
@@ -19,7 +19,7 @@ stopLimit = arr.indexOf(src);
 
 function setup() {
   createCanvas(700, 700);
-  x=225;
+  x=250;
   background(0o0);
   noLoop();
 }
@@ -53,18 +53,9 @@ function bubSort(arr){
       if(j>=arr.length-i-1){
         j = 0;
         i++;
-        x=230;
+        x=250;
       }
   }
-}
-
-function createrect(arr,pos,r,g,b){
-  fill(r,g,b);
-  rect(pos,350,50,50);
-  textSize(26);
-  textAlign(CENTER);
-  fill('white')
-  text(arr, pos+25, 385);
 }
 
 function createTriangle(x){
