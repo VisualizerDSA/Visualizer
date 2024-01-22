@@ -7,6 +7,8 @@ let stopLimit = 5;
 
 let arr = [9,8,5,4,3,2,1]
 let src = 1;
+const RECT_COLOR = [255,0,0]
+let initalBoxPos = 225;
 
 let i=0;
 let j=0;
@@ -18,7 +20,7 @@ stopLimit = arr.indexOf(src);
 function setup() {
   createCanvas(700, 700);
   x=225;
-  background(000);
+  background(0o0);
   noLoop();
 }
 
@@ -71,11 +73,21 @@ function createTriangle(x){
 }
 
 function draw() {
-  background(000);
+  background(0o0);
   for(let v=0;v<arr.length;v++){
-    createrect(arr[v],initialBoxPos, 255,0,0);
+    rectange(v);
     initialBoxPos+=50; 
   }
   initialBoxPos = 200;
   bubSort(arr);
+}
+
+function rectange(ind){
+  fill(RECT_COLOR[0], RECT_COLOR[1], RECT_COLOR[2]);
+  var xPos = initalBoxPos + (ind * 50);
+  rect(xPos, 350, 50, 50);
+  textSize(26);
+  textAlign(CENTER);
+  fill('white')
+  text(arr[ind], xPos + 25, 385);
 }
