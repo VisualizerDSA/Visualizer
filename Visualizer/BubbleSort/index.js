@@ -58,15 +58,6 @@ function bubSort(arr){
   }
 }
 
-function createrect(arr,pos,r,g,b){
-  fill(r,g,b);
-  rect(pos,350,50,50);
-  textSize(26);
-  textAlign(CENTER);
-  fill('white')
-  text(arr, pos+25, 385);
-}
-
 function createTriangle(x){
   triangle(x+40, 300, x+60, 300, x+50, 320);
   triangle(x-10, 300, x+10, 300, x, 320);
