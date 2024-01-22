@@ -1,50 +1,181 @@
+:root {
+    --bgColor: #121013;
+    --fgColor: white;
+    --purple: #9334ea;
+    --btnColor: #fdfe02;
+}
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-nav{
+
+
+
+
+
+
+
+nav {
     position: fixed;
     width: 100vw;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-nav ul li{
-    float: left;
-    display: block;
+    background-color: var(--bgColor);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: var(--fgColor) solid 1px;
+    padding: 20px 30px;
+    font-size: 15px;
+    font-weight: bold;
     color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
 }
 
-nav ul li:hover {
-    cursor: pointer;
-    background-color: #111;
+.navMid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
+
+.navMid p {
+    margin-inline: 20px;
+}
+
+.navRight button {
+    background-color: var(--btnColor);
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    color: var(--bgColor);
+    font-size: 15px;
+    font-weight: bold;
+    border: var(--btnColor) dashed;
+}
+
+.navRight button:hover {
+    cursor: pointer;
+    background-color: var(--bgColor);
+    color: var(--btnColor);
+}
+
+
+
+
+
+
+
+
+
 .mainSec{
     width: 100vw;
     height: 100vh;
+    display: grid;
+    grid-template-columns: 4fr 5fr;
+}
+
+.codeSec {
+    flex: 4;
+    height: 100%;
+    background-color: #282c35;
+    overflow: scroll;
+}
+
+.codeSec pre{
+    font-size: 20px;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.visualizeSec {
+    flex: 5;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.inputs {
-    background-color: red;
-    flex: 1;
+.visualize{
+    flex: 3;
+    width: 100%;
+    background-color: black;
 }
 
-.visualize {
-    background-color: green;
-    flex: 4;
+.inputs{
+    flex: 1;
+    width: 100%;
+    background-color: #282c35; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.inputData{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    flex: 9;
+}
+
+.inputSlider{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.inputAlgo{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.slider{
+    width: 50%  ;
+}
+.tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+.slider{
+    cursor: pointer;
+}
+
+.inputControls{
+    flex: 1;
+    background-color: #282c35;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.inputControls p {
+    margin-left: 5px;
+    margin-right: 5px;
+    /* padding: 5px 10px; */
+    font-size: 40px;
+}
+
+.inputControls p:hover {
+    cursor: pointer;
 }
