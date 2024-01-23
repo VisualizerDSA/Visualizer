@@ -69,7 +69,7 @@ function swapNodes(ind){
 }
 
 function moveRect(rect,dir){
-    rect.newPos = rect.xPos + (dir)*50;
+    rect.newPos = rect.xPos + (dir)*48;
     rect.swap = true;
     rect.dir = dir;
 }
