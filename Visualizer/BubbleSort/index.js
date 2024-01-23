@@ -28,8 +28,7 @@ function mousePressed(){
   loop();
 }
 
-function wait(time)
-{
+function wait(time){
   start = millis()
   do
   {
