@@ -1,5 +1,3 @@
-
-let x;
 let c=1;
 let cursorSpeed = 2;
 let initialBoxPos = 225;
@@ -8,7 +6,8 @@ let stopLimit = 5;
 let arr = [9,8,5,4,3,2,1]
 let src = 1;
 const RECT_COLOR = [255,0,0]
-let initalBoxPos = 225;
+let initialRectPos = 225;
+let initialTrianglePos = 225;
 
 let i=0;
 let j=0;
@@ -19,7 +18,7 @@ stopLimit = arr.indexOf(src);
 
 function setup() {
   createCanvas(700, 700);
-  x=250;
+  x=initialBoxPos;
   background(0o0);
   noLoop();
 }
@@ -42,8 +41,7 @@ function bubSort(arr){
       let temp = arr[j];
       if(arr[j] > arr[j+1]){
         arr[j] = arr[j+1];
-        createTriangle(x);
-        x+=50;
+        createTriangle(arr[i]);
         wait(700);
         arr[j+1] = temp;
       }
@@ -52,14 +50,16 @@ function bubSort(arr){
       if(j>=arr.length-i-1){
         j = 0;
         i++;
-        x=250;
+        initialTrianglePos = initialRectPos;
       }
   }
 }
 
-function createTriangle(x){
-  triangle(x+40, 300, x+60, 300, x+50, 320);
-  triangle(x-10, 300, x+10, 300, x, 320);
+function createTriangle(ind){
+  var xPos = initialTrianglePos + (ind);
+  triangle(xPos+15, 300, xPos+35, 300, xPos+25, 320);
+  triangle(xPos+65, 300, xPos+85, 300, xPos+75, 320);
+  initialTrianglePos+=50;
 }
 
 function draw() {
@@ -74,7 +74,7 @@ function draw() {
 
 function rectange(ind){
   fill(RECT_COLOR[0], RECT_COLOR[1], RECT_COLOR[2]);
-  var xPos = initalBoxPos + (ind * 50);
+  var xPos = initialRectPos + (ind * 50);
   rect(xPos, 350, 50, 50);
   textSize(26);
   textAlign(CENTER);
