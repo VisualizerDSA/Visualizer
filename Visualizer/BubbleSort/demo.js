@@ -14,6 +14,9 @@ function setup() {
     }
 }
 
+var tick = 0;
+var time = 100;
+
 function draw() {
     background(0o0);
     for (let i = 0; i < arr.length; i++) {
@@ -22,6 +25,14 @@ function draw() {
         }
         rects[i].display();
     }
+
+    tick++;
+
+    if(tick>=time){
+        frame();
+        tick=0;
+    }
+
 }
 
 function getPosFromIndex(ind){
@@ -30,7 +41,7 @@ function getPosFromIndex(ind){
 
 var i=0;
 var j=0;
-function mousePressed(){
+function frame(){
     if(i<arr.length){
         if(j>=arr.length-1){
             i++;

@@ -29,6 +29,6 @@ class Node {
                 this.swap = false;
             }
         }
-        this.xPos += 1 * this.dir;
+        this.xPos += 2 * this.dir;
     }
 }
