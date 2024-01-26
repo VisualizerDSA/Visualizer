@@ -1,11 +1,11 @@
-let arr = [9, 8, 5, 4, 3, 2, 1]
+let arr = [9, 6, 8, 4, 7, 3, 5, 2, 1]
 const RECT_COLOR = [255, 0, 0]
 var initialBoxPos = 225;
 
 var rects = [];
 
 function setup() {
-    createCanvas(700, 700);
+    createCanvas(850, 700);
     background(0o0);
     for (let i = 0; i < arr.length; i++) {
         curRect = new Node(getPosFromIndex(i), arr[i]);
