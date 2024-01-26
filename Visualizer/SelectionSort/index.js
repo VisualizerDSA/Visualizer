@@ -29,7 +29,7 @@ function draw() {
     tick++;
 
     if(tick>=time){
-        quicksort(0, arr.length - 1);
+        frame();
         tick=0;
     }
 
@@ -39,30 +39,26 @@ function getPosFromIndex(ind){
     return initialBoxPos + (ind * 50);
 }
 
-function quicksort(low, high){
-    if(low < high){
-        var pi = partition(low, high);
-        quicksort(low, pi-1);
-        quicksort(pi+1, high);
-    }
-}
+var i=0;
+var j=0;
+var min_idx;
 
-function partition(low, high){
-    var pivot = arr[high];
-    var i = low - 1;
-    for(var j = low; j <= high-1; j++){
-        if(arr[j] < pivot){
-            i++;
-            swapNodes(i, j);
+function frame(){
+    if(i<arr.length-1){
+        min_idx = i;
+        for(j=i+1;j<arr.length;j++){
+            if(arr[j]<arr[min_idx]){
+                min_idx = j;
+            }
         }
+        swapNodes(i,min_idx);
+        i++;
     }
-    swapNodes(i+1, high);
-    return i+1;
 }
 
-function swapNodes(ind1, ind2){
-    moveRect(rects[ind1], 1);
-    moveRect(rects[ind2], -1);
+function swapNodes(ind1,ind2){
+    moveRect(rects[ind1], 1*ind1+ind2+1);
+    moveRect(rects[ind2], -1*ind1-ind2-1);
     var temp = rects[ind1];
     rects[ind1] = rects[ind2];
     rects[ind2] = temp;
