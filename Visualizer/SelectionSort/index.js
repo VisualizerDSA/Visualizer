@@ -57,8 +57,8 @@ function frame(){
 }
 
 function swapNodes(ind1,ind2){
-    moveRect(rects[ind1], 1*ind1+ind2+1);
-    moveRect(rects[ind2], -1*ind1-ind2-1);
+    moveRect(rects[ind1], 1*(ind2-ind1));
+    moveRect(rects[ind2], -1*(ind2-ind1));
     var temp = rects[ind1];
     rects[ind1] = rects[ind2];
     rects[ind2] = temp;
